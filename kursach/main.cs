@@ -13,7 +13,7 @@ namespace kursach
 {
     public partial class MyApp : Form
     {
-        int rus_score = 0;//создаем счетчик баллов для каждого предмета
+        int rus_score = 0;//СЃРѕР·РґР°РµРј СЃС‡РµС‚С‡РёРє Р±Р°Р»Р»РѕРІ РґР»СЏ РєР°Р¶РґРѕРіРѕ РїСЂРµРґРјРµС‚Р°
         int math_score = 0;
         int inf_score = 0;
         int fiz_score = 0;
@@ -24,10 +24,10 @@ namespace kursach
         int yaz_score = 0;
         int geo_score = 0;
         int lit_score = 0;
-        HashSet<string> yourSubjects = new HashSet<string>();//будем вносить сюда названия тех предметов, баллы которых были введены
-        DataTable table; //создаем таблицу 1
+        HashSet<string> yourSubjects = new HashSet<string>();//Р±СѓРґРµРј РІРЅРѕСЃРёС‚СЊ СЃСЋРґР° РЅР°Р·РІР°РЅРёСЏ С‚РµС… РїСЂРµРґРјРµС‚РѕРІ, Р±Р°Р»Р»С‹ РєРѕС‚РѕСЂС‹С… Р±С‹Р»Рё РІРІРµРґРµРЅС‹
+        DataTable table; //СЃРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ 1
 
-        public struct vibor //создаем структуру
+        public struct vibor //СЃРѕР·РґР°РµРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
         {
             public string name;
             public int score;
@@ -41,24 +41,24 @@ namespace kursach
 
 
 
-        private void MyApp_Load(object sender, EventArgs e)//заполняем таблицу 1
+        private void MyApp_Load(object sender, EventArgs e)//Р·Р°РїРѕР»РЅСЏРµРј С‚Р°Р±Р»РёС†Сѓ 1
         {
-            vibors.Add(new vibor("Русский", 0));
-            vibors.Add(new vibor("Математика", 0));
-            vibors.Add(new vibor("Информатика", 0));
-            vibors.Add(new vibor("Физика", 0));
-            vibors.Add(new vibor("Обществознание", 0));
-            vibors.Add(new vibor("История", 0));
-            vibors.Add(new vibor("Химия", 0));
-            vibors.Add(new vibor("Биология", 0));
-            vibors.Add(new vibor("Иностранный язык", 0));
-            vibors.Add(new vibor("География", 0));
-            vibors.Add(new vibor("Литература", 0));
+            vibors.Add(new vibor("Р СѓСЃСЃРєРёР№", 0));
+            vibors.Add(new vibor("РњР°С‚РµРјР°С‚РёРєР°", 0));
+            vibors.Add(new vibor("РРЅС„РѕСЂРјР°С‚РёРєР°", 0));
+            vibors.Add(new vibor("Р¤РёР·РёРєР°", 0));
+            vibors.Add(new vibor("РћР±С‰РµСЃС‚РІРѕР·РЅР°РЅРёРµ", 0));
+            vibors.Add(new vibor("РСЃС‚РѕСЂРёСЏ", 0));
+            vibors.Add(new vibor("РҐРёРјРёСЏ", 0));
+            vibors.Add(new vibor("Р‘РёРѕР»РѕРіРёСЏ", 0));
+            vibors.Add(new vibor("РРЅРѕСЃС‚СЂР°РЅРЅС‹Р№ СЏР·С‹Рє", 0));
+            vibors.Add(new vibor("Р“РµРѕРіСЂР°С„РёСЏ", 0));
+            vibors.Add(new vibor("Р›РёС‚РµСЂР°С‚СѓСЂР°", 0));
 
 
             table = new DataTable();
-            table.Columns.Add("Предмет", typeof(string));
-            table.Columns.Add("Балл", typeof(int));
+            table.Columns.Add("РџСЂРµРґРјРµС‚", typeof(string));
+            table.Columns.Add("Р‘Р°Р»Р»", typeof(int));
 
             for (int i = 0; i < vibors.Count; i++)
             {
@@ -76,46 +76,46 @@ namespace kursach
                 string subject = input_table.Rows[e.RowIndex].Cells[0].Value.ToString();
                 int score = Convert.ToInt32(input_table.Rows[e.RowIndex].Cells[1].Value);
 
-                if (subject == "Русский")
+                if (subject == "Р СѓСЃСЃРєРёР№")
                     rus_score = score;
 
-                else if (subject == "Математика")
+                else if (subject == "РњР°С‚РµРјР°С‚РёРєР°")
                     math_score = score;
 
-                else if (subject == "Информатика")
+                else if (subject == "РРЅС„РѕСЂРјР°С‚РёРєР°")
                     inf_score = score;
 
-                else if (subject == "Физика")
+                else if (subject == "Р¤РёР·РёРєР°")
                     fiz_score = score;
 
-                else if (subject == "Обществознание")
+                else if (subject == "РћР±С‰РµСЃС‚РІРѕР·РЅР°РЅРёРµ")
                     obc_score = score;
 
-                else if (subject == "История")
+                else if (subject == "РСЃС‚РѕСЂРёСЏ")
                     ist_score = score;
 
-                else if (subject == "Химия")
+                else if (subject == "РҐРёРјРёСЏ")
                     him_score = score;
 
-                else if (subject == "Биология")
+                else if (subject == "Р‘РёРѕР»РѕРіРёСЏ")
                     bio_score = score;
-                else if (subject == "Иностранный язык")
+                else if (subject == "РРЅРѕСЃС‚СЂР°РЅРЅС‹Р№ СЏР·С‹Рє")
                     yaz_score = score;
-                else if (subject == "География")
+                else if (subject == "Р“РµРѕРіСЂР°С„РёСЏ")
                     geo_score = score;
 
-                else if (subject == "Литература")
+                else if (subject == "Р›РёС‚РµСЂР°С‚СѓСЂР°")
                     lit_score = score;
 
             }
 
-        }//считываем баллы из таблицы
+        }//СЃС‡РёС‚С‹РІР°РµРј Р±Р°Р»Р»С‹ РёР· С‚Р°Р±Р»РёС†С‹
 
 
 
-        Dictionary<string, List<Napravlenie>> vuzNapravleniya = new Dictionary<string, List<Napravlenie>>();//создаем список направлений
+        Dictionary<string, List<Napravlenie>> vuzNapravleniya = new Dictionary<string, List<Napravlenie>>();//СЃРѕР·РґР°РµРј СЃРїРёСЃРѕРє РЅР°РїСЂР°РІР»РµРЅРёР№
 
-        public class Napravlenie//создаем его структуру
+        public class Napravlenie//СЃРѕР·РґР°РµРј РµРіРѕ СЃС‚СЂСѓРєС‚СѓСЂСѓ
         {
             public string Name { get; set; }
             public int LastYearScore { get; set; }
@@ -137,29 +137,29 @@ namespace kursach
             }
         }
 
-        public MyApp()// заполнение таблицы 2
+        public MyApp()// Р·Р°РїРѕР»РЅРµРЅРёРµ С‚Р°Р±Р»РёС†С‹ 2
         {
             InitializeComponent();
 
 
-            // Создание столбцов для таблицы DataGridView
+            // РЎРѕР·РґР°РЅРёРµ СЃС‚РѕР»Р±С†РѕРІ РґР»СЏ С‚Р°Р±Р»РёС†С‹ DataGridView
             DataGridViewTextBoxColumn colName = new DataGridViewTextBoxColumn();
-            colName.HeaderText = "Название направления";
+            colName.HeaderText = "РќР°Р·РІР°РЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёСЏ";
             colName.Name = "colName";
 
             DataGridViewTextBoxColumn colLastYearScore = new DataGridViewTextBoxColumn();
-            colLastYearScore.HeaderText = "Баллы прошлого года";
+            colLastYearScore.HeaderText = "Р‘Р°Р»Р»С‹ РїСЂРѕС€Р»РѕРіРѕ РіРѕРґР°";
             colLastYearScore.Name = "colLastYearScore";
 
             DataGridViewTextBoxColumn colUserScore = new DataGridViewTextBoxColumn();
-            colUserScore.HeaderText = "Баллы пользователя";
+            colUserScore.HeaderText = "Р‘Р°Р»Р»С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ";
             colUserScore.Name = "colUserScore";
 
             DataGridViewTextBoxColumn colUserRank = new DataGridViewTextBoxColumn();
-            colUserRank.HeaderText = "Номер в списке: пользователь/всего";
+            colUserRank.HeaderText = "РќРѕРјРµСЂ РІ СЃРїРёСЃРєРµ: РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ/РІСЃРµРіРѕ";
             colUserRank.Name = "colUserRank";
 
-            // Добавление столбцов в DataGridView
+            // Р”РѕР±Р°РІР»РµРЅРёРµ СЃС‚РѕР»Р±С†РѕРІ РІ DataGridView
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { colName, colLastYearScore, colUserScore, colUserRank });
             int desiredWidth = 210;
             foreach (DataGridViewColumn column in dataGridView.Columns)
@@ -167,78 +167,78 @@ namespace kursach
                 column.Width = desiredWidth;
             }
             dataGridView.Height = 135;
-            // Заполнение данных о направлениях
+            // Р—Р°РїРѕР»РЅРµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РЅР°РїСЂР°РІР»РµРЅРёСЏС…
             FillNapravleniyaData();
 
-            // Отображение направлений в таблице
+            // РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РЅР°РїСЂР°РІР»РµРЅРёР№ РІ С‚Р°Р±Р»РёС†Рµ
             DisplayNapravleniya();
         }
 
-        private void FillNapravleniyaData()//ввод данных о вузах, их напрвлениях и требованиях
+        private void FillNapravleniyaData()//РІРІРѕРґ РґР°РЅРЅС‹С… Рѕ РІСѓР·Р°С…, РёС… РЅР°РїСЂРІР»РµРЅРёСЏС… Рё С‚СЂРµР±РѕРІР°РЅРёСЏС…
         {
-            // Вуз 1
+            // Р’СѓР· 1
             List<Napravlenie> vuz1Napravleniya = new List<Napravlenie>();
 
-            List<string> mainSubjects1 = new List<string> { "Русский", "Математика" };
-            List<string> optionalSubjects1 = new List<string> { "Физика", "Информатика" };
-            vuz1Napravleniya.Add(new Napravlenie("Направление 1", 255, mainSubjects1, optionalSubjects1, 10));
+            List<string> mainSubjects1 = new List<string> { "Р СѓСЃСЃРєРёР№", "РњР°С‚РµРјР°С‚РёРєР°" };
+            List<string> optionalSubjects1 = new List<string> { "Р¤РёР·РёРєР°", "РРЅС„РѕСЂРјР°С‚РёРєР°" };
+            vuz1Napravleniya.Add(new Napravlenie("РќР°РїСЂР°РІР»РµРЅРёРµ 1", 255, mainSubjects1, optionalSubjects1, 10));
 
-            List<string> mainSubjects2 = new List<string> { "Русский", "Математика" };
-            List<string> optionalSubjects2 = new List<string> { "Химия", "Информатика" };
-            vuz1Napravleniya.Add(new Napravlenie("Направление 2", 244, mainSubjects2, optionalSubjects2, 7));
+            List<string> mainSubjects2 = new List<string> { "Р СѓСЃСЃРєРёР№", "РњР°С‚РµРјР°С‚РёРєР°" };
+            List<string> optionalSubjects2 = new List<string> { "РҐРёРјРёСЏ", "РРЅС„РѕСЂРјР°С‚РёРєР°" };
+            vuz1Napravleniya.Add(new Napravlenie("РќР°РїСЂР°РІР»РµРЅРёРµ 2", 244, mainSubjects2, optionalSubjects2, 7));
 
-            vuzNapravleniya.Add("РТУ МИРЭА", vuz1Napravleniya);
+            vuzNapravleniya.Add("Р РўРЈ РњРР Р­Рђ", vuz1Napravleniya);
 
-            // Вуз 2
+            // Р’СѓР· 2
             List<Napravlenie> vuz2Napravleniya = new List<Napravlenie>();
 
-            List<string> mainSubjects3 = new List<string> { "Русский", "Иностранный язык" };
-            List<string> optionalSubjects3 = new List<string> { "Обществознание", "История" };
-            vuz2Napravleniya.Add(new Napravlenie("Направление 3", 287, mainSubjects3, optionalSubjects3, 12));
+            List<string> mainSubjects3 = new List<string> { "Р СѓСЃСЃРєРёР№", "РРЅРѕСЃС‚СЂР°РЅРЅС‹Р№ СЏР·С‹Рє" };
+            List<string> optionalSubjects3 = new List<string> { "РћР±С‰РµСЃС‚РІРѕР·РЅР°РЅРёРµ", "РСЃС‚РѕСЂРёСЏ" };
+            vuz2Napravleniya.Add(new Napravlenie("РќР°РїСЂР°РІР»РµРЅРёРµ 3", 287, mainSubjects3, optionalSubjects3, 12));
 
-            List<string> mainSubjects4 = new List<string> { "Русский", "Математика" };
-            List<string> optionalSubjects4 = new List<string> { "Химия", "Биология" };
-            vuz2Napravleniya.Add(new Napravlenie("Направление 4", 233, mainSubjects4, optionalSubjects4, 5));
+            List<string> mainSubjects4 = new List<string> { "Р СѓСЃСЃРєРёР№", "РњР°С‚РµРјР°С‚РёРєР°" };
+            List<string> optionalSubjects4 = new List<string> { "РҐРёРјРёСЏ", "Р‘РёРѕР»РѕРіРёСЏ" };
+            vuz2Napravleniya.Add(new Napravlenie("РќР°РїСЂР°РІР»РµРЅРёРµ 4", 233, mainSubjects4, optionalSubjects4, 5));
 
-            vuzNapravleniya.Add("МГТУ им. Баумана", vuz2Napravleniya);
+            vuzNapravleniya.Add("РњР“РўРЈ РёРј. Р‘Р°СѓРјР°РЅР°", vuz2Napravleniya);
 
-            // Добавьте остальные вузы с их направлениями
+            // Р”РѕР±Р°РІСЊС‚Рµ РѕСЃС‚Р°Р»СЊРЅС‹Рµ РІСѓР·С‹ СЃ РёС… РЅР°РїСЂР°РІР»РµРЅРёСЏРјРё
         }
         Dictionary<string, int> goldMedalScores = new Dictionary<string, int>()
         {
-            { "РТУ МИРЭА", 10 },
-            { "МГТУ им. Баумана", 7 },
-            // и так далее...
-        };//словари для баллов за индивидуальные достижения
+            { "Р РўРЈ РњРР Р­Рђ", 10 },
+            { "РњР“РўРЈ РёРј. Р‘Р°СѓРјР°РЅР°", 7 },
+            // Рё С‚Р°Рє РґР°Р»РµРµ...
+        };//СЃР»РѕРІР°СЂРё РґР»СЏ Р±Р°Р»Р»РѕРІ Р·Р° РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ РґРѕСЃС‚РёР¶РµРЅРёСЏ
         Dictionary<string, int> volunteerScores = new Dictionary<string, int>()
         {
-            { "РТУ МИРЭА", 6 },
-            { "МГТУ им. Баумана", 5 },
-            // и так далее...
+            { "Р РўРЈ РњРР Р­Рђ", 6 },
+            { "РњР“РўРЈ РёРј. Р‘Р°СѓРјР°РЅР°", 5 },
+            // Рё С‚Р°Рє РґР°Р»РµРµ...
         };
         Dictionary<string, int> gtoBadgeScores = new Dictionary<string, int>()
         {
-            { "РТУ МИРЭА", 3 },
-            { "МГТУ им. Баумана", 3 },
-            // и так далее...
+            { "Р РўРЈ РњРР Р­Рђ", 3 },
+            { "РњР“РўРЈ РёРј. Р‘Р°СѓРјР°РЅР°", 3 },
+            // Рё С‚Р°Рє РґР°Р»РµРµ...
         };
-        private void DisplayNapravleniya()//вывод 2 таблицы
+        private void DisplayNapravleniya()//РІС‹РІРѕРґ 2 С‚Р°Р±Р»РёС†С‹
         {
             dataGridView.Rows.Clear();
             Dictionary<string, int> subjectsScores = new Dictionary<string, int>()
             {
-                { "Русский", rus_score },
-                { "Математика", math_score },
-                { "Информатика", inf_score },
-                { "Физика", fiz_score },
-                { "Обществознание", obc_score },
-                { "История", ist_score },
-                { "Химия", him_score },
-                { "Биология", bio_score },
-                { "Иностранный язык", yaz_score },
-                { "География", geo_score },
-                { "Литература", lit_score }
-            };//список предметов, которые выбрал пользователь
+                { "Р СѓСЃСЃРєРёР№", rus_score },
+                { "РњР°С‚РµРјР°С‚РёРєР°", math_score },
+                { "РРЅС„РѕСЂРјР°С‚РёРєР°", inf_score },
+                { "Р¤РёР·РёРєР°", fiz_score },
+                { "РћР±С‰РµСЃС‚РІРѕР·РЅР°РЅРёРµ", obc_score },
+                { "РСЃС‚РѕСЂРёСЏ", ist_score },
+                { "РҐРёРјРёСЏ", him_score },
+                { "Р‘РёРѕР»РѕРіРёСЏ", bio_score },
+                { "РРЅРѕСЃС‚СЂР°РЅРЅС‹Р№ СЏР·С‹Рє", yaz_score },
+                { "Р“РµРѕРіСЂР°С„РёСЏ", geo_score },
+                { "Р›РёС‚РµСЂР°С‚СѓСЂР°", lit_score }
+            };//СЃРїРёСЃРѕРє РїСЂРµРґРјРµС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ РІС‹Р±СЂР°Р» РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ
 
             foreach (var kvp in subjectsScores)
             {
@@ -250,19 +250,19 @@ namespace kursach
                 {
                     yourSubjects.Remove(kvp.Key);
                 }
-            }//если данные в таблице поменялись, то поменяет и список
+            }//РµСЃР»Рё РґР°РЅРЅС‹Рµ РІ С‚Р°Р±Р»РёС†Рµ РїРѕРјРµРЅСЏР»РёСЃСЊ, С‚Рѕ РїРѕРјРµРЅСЏРµС‚ Рё СЃРїРёСЃРѕРє
 
             int GetSubjectScore(string subject)
             {
-                if (subjectsScores.ContainsKey(subject))// Проверяем, содержит ли словарь subjectsScores ключ subject
+                if (subjectsScores.ContainsKey(subject))// РџСЂРѕРІРµСЂСЏРµРј, СЃРѕРґРµСЂР¶РёС‚ Р»Рё СЃР»РѕРІР°СЂСЊ subjectsScores РєР»СЋС‡ subject
                 {
-                    return subjectsScores[subject];// Если ключ subject содержится в словаре, возвращаем соответствующее ему значение (оценку)
+                    return subjectsScores[subject];// Р•СЃР»Рё РєР»СЋС‡ subject СЃРѕРґРµСЂР¶РёС‚СЃСЏ РІ СЃР»РѕРІР°СЂРµ, РІРѕР·РІСЂР°С‰Р°РµРј СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРµ РµРјСѓ Р·РЅР°С‡РµРЅРёРµ (РѕС†РµРЅРєСѓ)
                 }
                 else
                 {
-                    return 0; // Если ключ subject отсутствует в словаре, возвращаем 0, что может означать, что предмет не найден или оценка недоступна
+                    return 0; // Р•СЃР»Рё РєР»СЋС‡ subject РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ СЃР»РѕРІР°СЂРµ, РІРѕР·РІСЂР°С‰Р°РµРј 0, С‡С‚Рѕ РјРѕР¶РµС‚ РѕР·РЅР°С‡Р°С‚СЊ, С‡С‚Рѕ РїСЂРµРґРјРµС‚ РЅРµ РЅР°Р№РґРµРЅ РёР»Рё РѕС†РµРЅРєР° РЅРµРґРѕСЃС‚СѓРїРЅР°
                 }
-            } //функция принимает на вход имя предмета и возвращает оценку этого предмета из словаря 
+            } //С„СѓРЅРєС†РёСЏ РїСЂРёРЅРёРјР°РµС‚ РЅР° РІС…РѕРґ РёРјСЏ РїСЂРµРґРјРµС‚Р° Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РѕС†РµРЅРєСѓ СЌС‚РѕРіРѕ РїСЂРµРґРјРµС‚Р° РёР· СЃР»РѕРІР°СЂСЏ 
 
             foreach (var kvp in vuzNapravleniya)
             {
@@ -273,22 +273,22 @@ namespace kursach
                 {
                     if (vuzName == cmbVuz.Text)
                     {
-                        // Получаем состояние чекбоксов и выбранный вуз
+                        // РџРѕР»СѓС‡Р°РµРј СЃРѕСЃС‚РѕСЏРЅРёРµ С‡РµРєР±РѕРєСЃРѕРІ Рё РІС‹Р±СЂР°РЅРЅС‹Р№ РІСѓР·
                         string selectedUniversity = cmbVuz.SelectedItem.ToString();
 
                         ClassLibrary.ClassForAchivments AchClass = new ClassLibrary.ClassForAchivments();
-                        // Используем функцию GetAchievementScore() для получения баллов за каждое достижение
-                        int goldMedalScore = goldbox.Checked ? AchClass.GetAchievementScore("золотая медаль", selectedUniversity, goldMedalScores, volunteerScores, gtoBadgeScores) : 0;
-                        int volunteerScore = volontbox.Checked ? AchClass.GetAchievementScore("волонтерская деятельность", selectedUniversity, goldMedalScores, volunteerScores, gtoBadgeScores) : 0;
-                        int gtoBadgeScore = gtobox.Checked ? AchClass.GetAchievementScore("золотой значок ГТО", selectedUniversity, goldMedalScores, volunteerScores, gtoBadgeScores) : 0;
+                        // РСЃРїРѕР»СЊР·СѓРµРј С„СѓРЅРєС†РёСЋ GetAchievementScore() РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р±Р°Р»Р»РѕРІ Р·Р° РєР°Р¶РґРѕРµ РґРѕСЃС‚РёР¶РµРЅРёРµ
+                        int goldMedalScore = goldbox.Checked ? AchClass.GetAchievementScore("Р·РѕР»РѕС‚Р°СЏ РјРµРґР°Р»СЊ", selectedUniversity, goldMedalScores, volunteerScores, gtoBadgeScores) : 0;
+                        int volunteerScore = volontbox.Checked ? AchClass.GetAchievementScore("РІРѕР»РѕРЅС‚РµСЂСЃРєР°СЏ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚СЊ", selectedUniversity, goldMedalScores, volunteerScores, gtoBadgeScores) : 0;
+                        int gtoBadgeScore = gtobox.Checked ? AchClass.GetAchievementScore("Р·РѕР»РѕС‚РѕР№ Р·РЅР°С‡РѕРє Р“РўРћ", selectedUniversity, goldMedalScores, volunteerScores, gtoBadgeScores) : 0;
                         
-                        // Общее количество баллов
+                        // РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ
                         int totalScore = goldMedalScore + volunteerScore + gtoBadgeScore;
 
-                        // Проверяем, не превышает ли общее количество баллов 10
+                        // РџСЂРѕРІРµСЂСЏРµРј, РЅРµ РїСЂРµРІС‹С€Р°РµС‚ Р»Рё РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ 10
                         if (totalScore > 10)
                         {
-                            totalScore = 10; // Если превышает, устанавливаем общее количество баллов равным 10
+                            totalScore = 10; // Р•СЃР»Рё РїСЂРµРІС‹С€Р°РµС‚, СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ СЂР°РІРЅС‹Рј 10
                         }
 
                         int n = 0;
@@ -302,7 +302,7 @@ namespace kursach
                                 n += 1;
                                 napravlenie.UserScore += GetSubjectScore(i);
                             }
-                        }//подсчет баллов с основных предметов
+                        }//РїРѕРґСЃС‡РµС‚ Р±Р°Р»Р»РѕРІ СЃ РѕСЃРЅРѕРІРЅС‹С… РїСЂРµРґРјРµС‚РѕРІ
 
                         foreach (var i in napravlenie.OptionalSubjects)
                         {
@@ -316,13 +316,13 @@ namespace kursach
                                 }
                             }
 
-                        }//максимум из предметов по выбору
+                        }//РјР°РєСЃРёРјСѓРј РёР· РїСЂРµРґРјРµС‚РѕРІ РїРѕ РІС‹Р±РѕСЂСѓ
                         if (napravlenie.MainSubjects.Count > 2 && napravlenie.OptionalSubjects.Count == 0) { flag2 = true; }
                         napravlenie.UserScore += maxOptionalScore;
 
                         
                         ClassLibrary.ClassForTxt TxtClass = new ClassLibrary.ClassForTxt();
-                        string ResultOfTxt = TxtClass.ProcessData(vuzName, napravlenie.UserScore + totalScore, napravlenie.Name);//из библиотеки классов                                                                                                        
+                        string ResultOfTxt = TxtClass.ProcessData(vuzName, napravlenie.UserScore + totalScore, napravlenie.Name);//РёР· Р±РёР±Р»РёРѕС‚РµРєРё РєР»Р°СЃСЃРѕРІ                                                                                                        
                         napravlenie.UserRank = ResultOfTxt + "/" + napravlenie.HowNuchPlaces;
 
                         if (n == napravlenie.MainSubjects.Count && flag2)
@@ -334,10 +334,10 @@ namespace kursach
                             dataGridView.Rows[rowIndex].Cells["colUserRank"].Value = napravlenie.UserRank;
 
                         }
-                        //заполнение таблицы только в случае указания предметов, удовлетворяющих требованиям
+                        //Р·Р°РїРѕР»РЅРµРЅРёРµ С‚Р°Р±Р»РёС†С‹ С‚РѕР»СЊРєРѕ РІ СЃР»СѓС‡Р°Рµ СѓРєР°Р·Р°РЅРёСЏ РїСЂРµРґРјРµС‚РѕРІ, СѓРґРѕРІР»РµС‚РІРѕСЂСЏСЋС‰РёС… С‚СЂРµР±РѕРІР°РЅРёСЏРј
                     }
-                }//сверяем требования к предметам у направлений с предметами пользователя
-            }//заполнение таблицы 2
+                }//СЃРІРµСЂСЏРµРј С‚СЂРµР±РѕРІР°РЅРёСЏ Рє РїСЂРµРґРјРµС‚Р°Рј Сѓ РЅР°РїСЂР°РІР»РµРЅРёР№ СЃ РїСЂРµРґРјРµС‚Р°РјРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+            }//Р·Р°РїРѕР»РЅРµРЅРёРµ С‚Р°Р±Р»РёС†С‹ 2
 
 
 
@@ -346,29 +346,29 @@ namespace kursach
             if (dataGridView.RowCount < 7)
             {
                 dataGridView.Height = 135 + 20 * dataGridView.RowCount;
-            }//размеры таблицы в соответствии с количеством напрвлений
+            }//СЂР°Р·РјРµСЂС‹ С‚Р°Р±Р»РёС†С‹ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РєРѕР»РёС‡РµСЃС‚РІРѕРј РЅР°РїСЂРІР»РµРЅРёР№
             else
             {
                 dataGridView.Height = 135 + 20 * 7;
-            }//чтобы размеры не привысили размеры формы
+            }//С‡С‚РѕР±С‹ СЂР°Р·РјРµСЂС‹ РЅРµ РїСЂРёРІС‹СЃРёР»Рё СЂР°Р·РјРµСЂС‹ С„РѕСЂРјС‹
 
         }
         private void cmbVuz_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayNapravleniya();
-        }//обновление таблицы при выборе другого вуза
+        }//РѕР±РЅРѕРІР»РµРЅРёРµ С‚Р°Р±Р»РёС†С‹ РїСЂРё РІС‹Р±РѕСЂРµ РґСЂСѓРіРѕРіРѕ РІСѓР·Р°
 
         private void button1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = page_table;
-        }//кнопка 1
+        }//РєРЅРѕРїРєР° 1
 
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = page_score;
-        }//кнопка 2
+        }//РєРЅРѕРїРєР° 2
 
-        private void button3_Click(object sender, EventArgs e)//кнопка для обновления таблицы
+        private void button3_Click(object sender, EventArgs e)//РєРЅРѕРїРєР° РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ С‚Р°Р±Р»РёС†С‹
         {
             DisplayNapravleniya();
         }
