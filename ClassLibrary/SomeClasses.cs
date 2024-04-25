@@ -9,7 +9,7 @@ namespace ClassLibrary
     {
         public string ProcessData(string vuzName, int totalScore, string napravlenieName)
         {
-            string filePath = "C:\\Users\\Пользователь\\Desktop\\Study\\C#\\практика\\kursach\\spisok.txt";
+            string filePath =  "C:\\Users\\Пользователь\\Desktop\\kursach\\kursach\\spisok.txt";
 
             if (File.Exists(filePath))
             {
